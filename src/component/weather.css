@@ -6,10 +6,56 @@
 .Container {
   width: 100%;
   display: inline-block;
+  border-radius: 4rem;
 }
 
 .city {
   width: 100%;
   display: inline-flex;
   flex-direction: column;
+}
+
+.temperature {
+  font-size: 1rem;
+  box-shadow: 0 2px 5px 5px rgb(177, 165, 162);
+  border-radius: 2rem;
+  /* box-sizing: border-box; */
+  width: 150px;
+  display: inline-block;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.description {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+p > img {
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 2px 5px 5px #cccccc;
+  border-radius: 0.6rem;
+  justify-content: space-around;
+  background: rgb(255, 255, 255);
+}
+
+.SC {
+  display: inline-flex;
+  gap: 8px;
+}
+
+select {
+  border-radius: 100px;
+  background: white;
 }

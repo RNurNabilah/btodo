@@ -15,12 +15,17 @@
 .Weather-col {
   background-color: #282c34;
   color: #39395f;
-  display: inline-flex;
+  /* display: inline-flex; */
   align-items: center;
-  width: calc(100% - 20px);
-  padding: 0 10px;
+  /* width: calc(100% - 20px); */
+  padding: 5px 0 30px;
   height: 30vh;
   background-color: #e1eedd;
+}
+
+.greeting {
+  font-size: xx-large;
+  padding: 10px;
 }
 
 .App-link {
@@ -38,7 +43,7 @@
 
 .Weather {
   margin-left: auto;
-  margin-right: 20px;
+  margin: 20px;
 }
 
 .Categories {
@@ -56,9 +61,9 @@
 #box-container {
   display: inline-flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   width: 100%;
-  height:fit-content;
+  height: fit-content;
 }
 
 #box-button {
@@ -110,5 +115,9 @@
 
   #box-button > p {
     font-size: 27px;
+  }
+
+  .Weather-col {
+    height: fit-content;
   }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import state from "../city.js";
 import Codes from "../statecode.js";
+import "./weather.css";
 
 const Weather = () => {
   const [cities, setCities] = useState([]);
@@ -44,11 +45,20 @@ const Weather = () => {
 
   return (
     <div className="Container">
-      <div>{result?.main?.temp}</div>
+      <div className="box">
+        <div className="wave -one"></div>
+        <div className="wave -two"></div>
+        <div className="wave -three"></div>
+      </div>
+
       <div>
+        {result?.main?.temp && (
+          <div className="temperature">{`${result?.main?.temp} ℃`}</div>
+        )}
         {data?.map((d) => (
           <p key={d.description}>
-            {d.main}:{d.description}:
+            Weather condition: {d.main} <br />
+            Description: {d.description}
             <img
               src={`http://openweathermap.org/img/wn/${d.icon}@4x.png`}
               alt={`${d.description} icon`}
@@ -57,29 +67,31 @@ const Weather = () => {
         ))}
       </div>
 
-      <label htmlFor="state">Choose a state:</label>
-      <select name="states" onChange={handleStateChange}>
-        <option value="none">None</option>
-        {Object.keys(state).map((s) => {
-          return (
-            <option key={s} value={s}>
-              {s.replace("_", " ")}
-            </option>
-          );
-        })}
-      </select>
-
-      <label htmlFor="city">Choose a city:</label>
-      <select name="city" onChange={handleCityChange}>
-        <option value="none">None</option>
-        {cities.map((c) => {
-          return (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          );
-        })}
-      </select>
+      <div className="SC">
+        <label htmlFor="state">Choose a state:</label>
+        <select name="states" onChange={handleStateChange}>
+          <option value="none">None</option>
+          {Object.keys(state).map((s) => {
+            return (
+              <option key={s} value={s}>
+                {s.replace("_", " ")}
+              </option>
+            );
+          })}
+        </select>
+        <br />
+        <label htmlFor="city">Choose a city:</label>
+        <select name="city" onChange={handleCityChange}>
+          <option value="none">None</option>
+          {cities.map((c) => {
+            return (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            );
+          })}
+        </select>
+      </div>
     </div>
   );
 };

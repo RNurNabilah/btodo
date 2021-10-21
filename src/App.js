@@ -40,7 +40,7 @@ function App() {
 const Home = () => (
   <div>
     <div className="Weather-col">
-      <div>Hey There, Let's discover</div>
+      <div className="greeting">Hey, there! Let's discover!</div>
       <div className="Weather">
         {" "}
         <Weather />
