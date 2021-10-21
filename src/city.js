@@ -143,6 +143,8 @@ const state = {
     "Klang",
     "Shah Alam",
     "Petaling Jaya",
+    "Cyberjaya",
+    "Ampang",
     "Cheras",
     "Kajang",
     "Selayang",

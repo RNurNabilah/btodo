@@ -20,6 +20,20 @@ const Weather = () => {
     setSelectedCity(e.target.value);
   };
 
+  const getBackgroundColor = (weather) => {
+    if (weather === "Thunderstorm") {
+      return "#6B7280";
+    } else if (weather === "Drizzle") {
+      return "#D1D5DB";
+    } else if (weather === "Rain") {
+      return "#9CA3AF";
+    } else if (weather === "Clear") {
+      return "#93C5FD";
+    }
+
+    return "#F3F4F6";
+  };
+
   useEffect(() => {
     console.log(selectedState);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity},${selectedState}&appid=a497affed95ab5458861828d628571ee&units=metric`;
@@ -44,21 +58,18 @@ const Weather = () => {
   }, [selectedCity]);
 
   return (
-    <div className="Container">
-      <div className="box">
-        <div className="wave -one"></div>
-        <div className="wave -two"></div>
-        <div className="wave -three"></div>
-      </div>
+    <div
+      className="Container"
+      style={{ backgroundColor: getBackgroundColor(data[0]?.main) }}
+    >
+      {result?.main?.temp && (
+        <div className="temperature">{`${result?.main?.temp} °C`}</div>
+      )}
 
-      <div>
-        {result?.main?.temp && (
-          <div className="temperature">{`${result?.main?.temp} ℃`}</div>
-        )}
+      <div className="weatherCondition">
         {data?.map((d) => (
           <p key={d.description}>
-            Weather condition: {d.main} <br />
-            Description: {d.description}
+            {d.main} : {d.description}
             <img
               src={`http://openweathermap.org/img/wn/${d.icon}@4x.png`}
               alt={`${d.description} icon`}
@@ -66,7 +77,6 @@ const Weather = () => {
           </p>
         ))}
       </div>
-
       <div className="SC">
         <label htmlFor="state">Choose a state:</label>
         <select name="states" onChange={handleStateChange}>
@@ -80,7 +90,7 @@ const Weather = () => {
           })}
         </select>
         <br />
-        <label htmlFor="city">Choose a city:</label>
+        <label htmlFor="city"> Choose a city:</label>
         <select name="city" onChange={handleCityChange}>
           <option value="none">None</option>
           {cities.map((c) => {
@@ -92,6 +102,9 @@ const Weather = () => {
           })}
         </select>
       </div>
+      <div className="wave -one"></div>
+      <div className="wave -two"></div>
+      <div className="wave -three"></div>
     </div>
   );
 };

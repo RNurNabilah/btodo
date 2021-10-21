@@ -1,4 +1,5 @@
 import data_array from "../obj.js";
+import "./Cat.css";
 
 function Relaxation() {
   var filtered = data_array.filter((data) => data.type === "relaxation");
@@ -8,9 +9,11 @@ function Relaxation() {
       {filtered.map((list) => {
         return (
           <div id="card" key={list.id}>
-            <p>Activity: {list.activity}</p>
-            <p>No. of participants: {list.participants}</p>
-            <p>Type: {list.type}</p>
+            <div className="card">
+              <h2>{list.activity}</h2>
+              <p>No. of participants: {list.participants}</p>
+              <p>Type: {list.type}</p>
+            </div>
           </div>
         );
       })}

@@ -1,22 +1,19 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-import {
-  BrowserRouter as 
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter as Route, BrowserRouter } from "react-router-dom";
 import Images from "./Images/Image";
 import "./App.css";
+import "./Categories/Cat.css";
 import { useHistory } from "react-router-dom";
-import Recreation from "./Recommendation/Recreational";
-import Education from "./Recommendation/Education";
-import Cooking from "./Recommendation/Cooking";
-import Charity from "./Recommendation/Charity";
-import Diy from "./Recommendation/Diy";
-import Social from "./Recommendation/Social";
-import Relaxation from "./Recommendation/Relaxation";
-import Music from "./Recommendation/Music";
-import Busywork from "./Recommendation/Busywork";
+import Recreation from "./Categories/Recreational";
+import Education from "./Categories/Education";
+import Cooking from "./Categories/Cooking";
+import Charity from "./Categories/Charity";
+import Diy from "./Categories/Diy";
+import Social from "./Categories/Social";
+import Relaxation from "./Categories/Relaxation";
+import Music from "./Categories/Music";
+import Busywork from "./Categories/Busywork";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },

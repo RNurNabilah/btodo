@@ -1,0 +1,45 @@
+/* category page  */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40em;
+  min-height: 9rem;
+  overflow: hidden;
+  border-radius: 0.5em;
+  text-decoration: none;
+  margin: 1em;
+  padding: 2.75em 2.5em;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background-color: white;
+}
+
+#card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition: shake; */
+}
+
+.card:hover {
+  background-color: #590fb7;
+  color: white;
+  transform: scale(1.03, 1.03);
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+
+p {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 30px;
+}
