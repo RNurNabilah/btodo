@@ -4,12 +4,12 @@
 }
 
 .Container {
-  /* width: 100%; */
   display: inline-block;
   align-items: center;
   justify-content: center;
   width: 30vw;
   height: 30vh;
+  min-width: 5vw;
   margin: 0.5rem;
   border-radius: 50px;
   box-shadow: 0 2px 30px rgba(black, 0.2);
@@ -30,30 +30,31 @@
 }
 
 .temperature {
-  font-size: 30px;
+  font-size: 2.5vw;
+  font-size: 20px;
   z-index: 10;
   box-shadow: 0 2px 5px 5px rgb(221, 220, 219);
   border-radius: 2rem;
-  margin: 2rem;
+  margin: 1rem;
   width: 200px;
-  margin-left: 10rem;
-  align-self: center;
   font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
 }
 
 .description {
-  align-items: flex-start;
-  justify-content: flex-start;
   z-index: 10;
+  display: inline-flex;
 }
 
 .weatherCondition {
   z-index: 10;
-  font-size: 20px;
+  font-size: 1vw;
+  min-width: none;
 }
 
 p {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
@@ -63,8 +64,8 @@ p {
 }
 
 p > img {
-  max-width: 120px;
-  max-height: 120px;
+  width: 20%;
+  height: auto;
   box-shadow: 0 2px 5px 5px #cccccc;
   border-radius: 0.6rem;
   justify-content: space-around;
@@ -77,12 +78,15 @@ p > img {
   gap: 8px;
   max-width: 800px;
   z-index: 10;
-  font-size: 20px;
+  font-size: 1vw;
 }
 
 select {
   border-radius: 100px;
   background: white;
+  text-align: center;
+  min-width: 10%;
+  max-width: 60%;
 }
 
 .wave {
@@ -138,47 +142,13 @@ select {
   justify-content: center;
 }
 
-.temperature {
-  font-size: 1rem;
-  box-shadow: 0 2px 5px 5px rgb(177, 165, 162);
-  border-radius: 2rem;
-  /* box-sizing: border-box; */
-  width: 150px;
-  display: inline-block;
-  justify-content: space-around;
+.Display {
   align-items: center;
-  margin-left: 1rem;
-  margin-top: 1rem;
-}
-
-.description {
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-p {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
 }
 
-p > img {
-  width: 100px;
-  height: 100px;
-  box-shadow: 0 2px 5px 5px #cccccc;
-  border-radius: 0.6rem;
-  justify-content: space-around;
-  background: rgb(255, 255, 255);
-}
-
-.SC {
-  display: inline-flex;
-  gap: 8px;
-}
-
-select {
-  border-radius: 100px;
-  background: white;
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .Container {
+    margin-right: 100px;
+  }
 }

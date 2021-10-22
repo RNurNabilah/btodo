@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display+SC:ital,wght@1,700&display=swap");
+
+* {
+  font-family: "Monserrat", sans-serif;
+}
 
 .App {
   text-align: center;
@@ -18,6 +22,8 @@
   flex-direction: column;
   border: 1px solid rgb(197, 197, 197);
   border-radius: 0.5rem;
+  background-color: #007ced;
+  background: linear-gradient(to bottom, #f06966, #fad6a6);
 }
 
 .Logo {
@@ -40,44 +46,83 @@
     opacity: 0;
   }
   20% {
-    opacity: 1;
+    opacity: 0;
   }
   80% {
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
+
 .Weather-col {
-  color: black;
-  display: inline-flex;
+  /* color: black; */
+  display: flex;
   align-items: center;
   width: calc(100% - 20px);
   padding: 0 10px;
   /* height: 30vh; */
-  background-color: #e1eedd;
   min-height: 100px;
   overflow: hidden;
   font-size: large;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
+  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0
+      200px,
+    url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,
+    url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px
+      250px;
+  animation: wind 20s linear infinite;
 }
 
-.greeting {
-  font-size: xx-large;
-  padding: 10px;
+@keyframes wind {
+  0% {
+    background-position: 0 200px, 0 300px, 100px 250px;
+  }
+  100% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+  }
+}
+
+.Main-header {
+  font-size: 8vh;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 30px;
+  text-shadow: 3px 3px #d1d1d1;
+  width: 40%;
+  height: auto;
+  position: relative;
+  animation: mymove 3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes mymove {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0px;
+  }
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .App-link {
   color: #516469;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .Weather {
@@ -90,6 +135,15 @@
   min-height: fit-content;
   padding: 5px 0 30px;
   width: 100%;
+}
+
+.animate {
+  display: inline-block;
+  align-items: center;
+  width: 35vh;
+  padding: 10px;
+  background-color: #fad6a6;
+  border-radius: 0.5rem;
 }
 
 .Recommendation {
@@ -126,7 +180,7 @@
 }
 
 .Slider {
-  font-family: sans-serif;
+  font-family: "Monserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +235,7 @@
 }
 
 /* Mobile Devices ----------- */
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 720px) {
   .Logo {
     min-height: 35vmin;
     pointer-events: none;
@@ -203,13 +257,12 @@
   }
 
   .Weather-col {
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
   }
 }
 /* Dropdown */
 .dropbtn {
-  background-color: #04aa6d;
-  color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -239,10 +292,3 @@
 .dropdown:hover .dropmenu {
   display: block;
 }
-
-.dropdown:hover .dropbtn {
-  background-color: #036e47;
-}
-
-/* .category {
-} */

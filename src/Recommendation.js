@@ -1,8 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
+import Images from "./Images/Image";
 import data_array from "./obj.js";
 import Shuffle from "./Shuffle.js";
 import "./App.css";
+
 export default function Recommendation() {
   let cost = "";
   //fetch recommended activitiesy//
@@ -10,6 +11,7 @@ export default function Recommendation() {
     (data) =>
       data.price === 0.0 && data.accessibility === "Few to no challenges"
   );
+
   //randomize recommended
   var recommends = Shuffle(filter);
 
@@ -23,7 +25,8 @@ export default function Recommendation() {
         }
         return (
           <div class="scale" id="box-button">
-            <img src={logo} className="Logo" alt="logo" />
+            <img src={Images.recommend} className="Logo" alt="" />
+            <br />
             <p>{list.activity}</p>
             <div class="info">
               <h2>Details</h2>
@@ -34,7 +37,7 @@ export default function Recommendation() {
                 </li>
                 <li>
                   <strong>No. of Participants : </strong>
-                  {list.participant}
+                  {list.participants}
                 </li>
                 <li>
                   <strong>Type: </strong>
@@ -54,7 +57,7 @@ export default function Recommendation() {
 
   return (
     <div id="bored-container">
-      <h1>Recommended</h1>
+      <h1 className="animate">Recommended</h1>
       <div id="box-container">{mappingRecs}</div>
     </div>
   );

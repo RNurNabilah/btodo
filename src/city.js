@@ -1,3 +1,4 @@
+// Fetching State and Cities data
 const state = {
   Johor: [
     "Johor Bahru",

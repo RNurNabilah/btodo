@@ -1,3 +1,4 @@
+//Convert State and Cities into respective code according to Weather API
 const Codes = {
   None: "MY-00",
   Johor: "MY-01",

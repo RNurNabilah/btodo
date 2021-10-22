@@ -3,6 +3,7 @@ import state from "../city.js";
 import Codes from "../statecode.js";
 import "./weather.css";
 
+// usestate declaration
 const Weather = () => {
   const [cities, setCities] = useState([]);
   const [selectedState, setSelectedState] = useState("");
@@ -10,6 +11,7 @@ const Weather = () => {
   const [result, setResult] = useState({});
   const [data, selectData] = useState([]);
 
+  // Event pass the value to setcities and setSelectedCity
   const handleStateChange = (e) => {
     setCities(state[e.target.value]);
     setSelectedState(Codes[e.target.value]);
@@ -19,7 +21,7 @@ const Weather = () => {
     console.log(e.target.value);
     setSelectedCity(e.target.value);
   };
-
+  // Depending of the weather forecast it changes
   const getBackgroundColor = (weather) => {
     if (weather === "Thunderstorm") {
       return "#6B7280";
@@ -33,7 +35,7 @@ const Weather = () => {
 
     return "#F3F4F6";
   };
-
+  // trigger when selected city changes
   useEffect(() => {
     console.log(selectedState);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity},${selectedState}&appid=a497affed95ab5458861828d628571ee&units=metric`;

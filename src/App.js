@@ -41,7 +41,11 @@ function App() {
 const Home = () => (
   <div className="Main-container">
     <div className="Weather-col">
-      <div className="greeting">Hey, there! Let's discover!</div>
+      <div className="Main-header">
+        <strong>
+          Hey There! <br /> Let's discover
+        </strong>
+      </div>
       <div className="Weather">
         <Weather />
       </div>
